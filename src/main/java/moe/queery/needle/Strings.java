@@ -5,10 +5,10 @@ import java.util.List;
 public final class Strings {
 
     // @formatter:off
-    private static final String upperCharacters   = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    private static final String lowerCharacters   = upperCharacters.toLowerCase();
-    private static final String specialCharacters = "!@#$%&*()_+-=[]|,./?><";
-    private static final String numberCharacters  = "0123456789";
+    private static final String UPPER_CHARS   = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final String LOWER_CHARS   = "abdcefghijklmnopqrstuvwxyz";
+    private static final String SPECIAL_CHARS = "!@#$%&*()_+-=[]|,./?><";
+    private static final String NUMBER_CHARS  = "0123456789";
 
     public static String longestOf(final List<String> strings) { return longestOf(strings.toArray(new String[0])); }
     // @formatter:on
@@ -20,19 +20,19 @@ public final class Strings {
         return longestString;
     }
 
-    public static String getLowerCharacters() {
-        return lowerCharacters;
+    public static String getLowerChars() {
+        return LOWER_CHARS;
     }
 
-    public static String getNumberCharacters() {
-        return numberCharacters;
+    public static String getNumberChars() {
+        return NUMBER_CHARS;
     }
 
-    public static String getSpecialCharacters() {
-        return specialCharacters;
+    public static String getSpecialChars() {
+        return SPECIAL_CHARS;
     }
 
-    public static String getUpperCharacters() {
-        return upperCharacters;
+    public static String getUpperChars() {
+        return UPPER_CHARS;
     }
 }

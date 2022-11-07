@@ -2,7 +2,7 @@ package moe.queery.needle.color;
 
 import org.jetbrains.annotations.NotNull;
 
-public final class ColorUtil {
+public final class Colors {
     public static float[] rgba(final int color) {
         return new float[]{
                 ((color >> 16) & 0xff) / 255f,

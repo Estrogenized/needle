@@ -20,8 +20,12 @@ import static java.nio.file.Files.*;
 
 public final class Files {
     public static @NotNull File download(final String url, final File output) throws Throwable {
+        return download(url, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.117", output);
+    }
+
+    public static @NotNull File download(final String url, final String agent, final File output) throws Throwable {
         final URLConnection urlConnection = new URL(url).openConnection();
-        urlConnection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.117");
+        urlConnection.setRequestProperty("User-Agent", agent);
         urlConnection.connect();
         try (final ReadableByteChannel channel = Channels.newChannel(urlConnection.getInputStream())) {
             try (final FileOutputStream fileOutputStream = new FileOutputStream(output)) {

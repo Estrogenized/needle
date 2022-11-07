@@ -28,5 +28,4 @@ public class EvictingHashMap<K, V> extends LinkedHashMap<K, V> {
     protected boolean removeEldestEntry(final Map.Entry<K, V> eldest) {
         return this.size() > this.maxSize;
     }
-
 }
