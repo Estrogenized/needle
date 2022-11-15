@@ -31,6 +31,24 @@ public final class Strings {
         return input.substring(min, max);
     }
 
+    public static String normalizeSpaces(String input) {
+        input = input.replaceAll("\n", "");
+        final StringBuilder stringBuilder = new StringBuilder();
+        final char[] chars = input.toCharArray();
+        final char space = ' ';
+        for (int i = 0; i < input.length(); i++) {
+            final char
+                    preChar = chars[Math.max(0, i - 1)],
+                    currChar = chars[i],
+                    nextChar = chars[Math.min(input.length() - 1, i + 1)];
+            if (i == 0) continue;
+            if (currChar == space && i > input.length() - 1) continue;
+            if (preChar == space && currChar == space) continue;
+            stringBuilder.append(currChar);
+        }
+        return stringBuilder.toString();
+    }
+
     public static String getLowerChars() {
         return LOWER_CHARS;
     }
