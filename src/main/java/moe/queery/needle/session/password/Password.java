@@ -2,7 +2,7 @@ package moe.queery.needle.session.password;
 
 import com.nulabinc.zxcvbn.Strength;
 import com.nulabinc.zxcvbn.Zxcvbn;
-import moe.queery.needle.Strings;
+import moe.queery.needle.utils.Strings;
 import moe.queery.needle.math.Randoms;
 import moe.queery.needle.types.Pair;
 

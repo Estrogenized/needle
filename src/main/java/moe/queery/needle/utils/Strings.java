@@ -1,4 +1,4 @@
-package moe.queery.needle;
+package moe.queery.needle.utils;
 
 import java.util.List;
 
@@ -18,6 +18,17 @@ public final class Strings {
         int max = 0;
         for (final String string : strings) if (string.length() > max) max = (longestString = string).length();
         return longestString;
+    }
+
+    public static String sub(final String input, final int sub) {
+        return input.substring(Math.min(input.length(), sub));
+    }
+
+    public static String sub(final String input, final int start, final int end) {
+        int min = Math.min(start, end), max = Math.max(start, end);
+        min = Math.min(input.length(), min);
+        max = Math.min(input.length(), min);
+        return input.substring(min, max);
     }
 
     public static String getLowerChars() {
