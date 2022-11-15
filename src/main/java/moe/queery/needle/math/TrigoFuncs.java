@@ -1,13 +1,13 @@
 package moe.queery.needle.math;
 
 /**
- * @author Mojang :shrug:, lumii500pg
+ * @author Mojang :shrug:
  */
 public final class TrigoFuncs {
     public static final double[] PI_TABLE = new double[16];
     private static final char SIN_TABLE_CHAR = '\uffff';
     private static final float[] SIN_TABLE = new float[65536];
-    public static double PI;
+    public static double PI, TAU;
 
     static {
         for (int i = 0; i < SIN_TABLE.length; ++i) {
@@ -33,8 +33,8 @@ public final class TrigoFuncs {
         PI_TABLE[12]  = 3.141592653589;
         PI_TABLE[13]  = 3.1415926535897;
         PI_TABLE[14]  = 3.14159265358979;
-        PI =
-        PI_TABLE[15]  = 3.141592653589793;
+        TAU = (PI =
+        PI_TABLE[15]  = 3.141592653589793) * 2.D;
     }
     // @formatter:on
 
