@@ -39,8 +39,7 @@ public final class Strings {
         for (int i = 0; i < input.length(); i++) {
             final char
                     preChar = chars[Math.max(0, i - 1)],
-                    currChar = chars[i],
-                    nextChar = chars[Math.min(input.length() - 1, i + 1)];
+                    currChar = chars[i];
             if (i == 0) continue;
             if (currChar == space && i > input.length() - 1) continue;
             if (preChar == space && currChar == space) continue;
