@@ -46,6 +46,13 @@ public final class Strings {
         return stringBuilder.toString();
     }
 
+    public static String join(final Iterable<Object> iter, final String joining) {
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (final Object obj : iter) stringBuilder.append(obj).append(joining);
+        final String string = stringBuilder.toString();
+        return string.substring(0, string.length() - joining.length());
+    }
+
     public static String getLowerChars() {
         return LOWER_CHARS;
     }
