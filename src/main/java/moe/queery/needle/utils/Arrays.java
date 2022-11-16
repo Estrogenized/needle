@@ -233,83 +233,173 @@ public final class Arrays {
         return objs;
     }
 
-    public static boolean[] add(final boolean[] array1, final boolean adding) {
-        final int length = array1.length + 1;
+    public static boolean[] add(final boolean[] array, final boolean adding) {
+        final int length = array.length + 1;
         final boolean[] objs = new boolean[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static short[] add(final short[] array1, final short adding) {
-        final int length = array1.length + 1;
+    public static short[] add(final short[] array, final short adding) {
+        final int length = array.length + 1;
         final short[] objs = new short[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static int[] add(final int[] array1, final int adding) {
-        final int length = array1.length + 1;
+    public static int[] add(final int[] array, final int adding) {
+        final int length = array.length + 1;
         final int[] objs = new int[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static long[] add(final long[] array1, final short adding) {
-        final int length = array1.length + 1;
+    public static long[] add(final long[] array, final long adding) {
+        final int length = array.length + 1;
         final long[] objs = new long[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static float[] add(final float[] array1, final float adding) {
-        final int length = array1.length + 1;
+    public static float[] add(final float[] array, final float adding) {
+        final int length = array.length + 1;
         final float[] objs = new float[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static double[] add(final double[] array1, final double adding) {
-        final int length = array1.length + 1;
+    public static double[] add(final double[] array, final double adding) {
+        final int length = array.length + 1;
         final double[] objs = new double[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static byte[] add(final byte[] array1, final byte adding) {
-        final int length = array1.length + 1;
+    public static byte[] add(final byte[] array, final byte adding) {
+        final int length = array.length + 1;
         final byte[] objs = new byte[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static char[] add(final char[] array1, final char adding) {
-        final int length = array1.length + 1;
+    public static char[] add(final char[] array, final char adding) {
+        final int length = array.length + 1;
         final char[] objs = new char[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static String[] add(final String[] array1, final String adding) {
-        final int length = array1.length + 1;
+    public static String[] add(final String[] array, final String adding) {
+        final int length = array.length + 1;
         final String[] objs = new String[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
         return objs;
     }
 
-    public static Object[] add(final Object[] array1, final Object adding) {
-        final int length = array1.length + 1;
+    public static Object[] add(final Object[] array, final Object adding) {
+        final int length = array.length + 1;
         final Object[] objs = new Object[length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
+        System.arraycopy(array, 0, objs, array.length, array.length);
         objs[length - 1] = adding;
+        return objs;
+    }
+
+    public static boolean[] add(final boolean[] array, int index, final boolean adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final boolean[] objs = new boolean[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static short[] add(final short[] array, int index, final short adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final short[] objs = new short[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static int[] add(final int[] array, int index, final int adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final int[] objs = new int[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static long[] add(final long[] array, int index, final long adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final long[] objs = new long[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static float[] add(final float[] array, int index, final float adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final float[] objs = new float[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static double[] add(final double[] array, int index, final double adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final double[] objs = new double[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static byte[] add(final byte[] array, int index, final byte adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final byte[] objs = new byte[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static char[] add(final char[] array, int index, final char adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final char[] objs = new char[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static String[] add(final String[] array, int index, final String adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final String[] objs = new String[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
+        return objs;
+    }
+
+    public static Object[] add(final Object[] array, int index, final Object adding) {
+        index = Math.max(0, Math.min(array.length - 1, index));
+        final Object[] objs = new Object[array.length + 1];
+        objs[index] = adding;
+        System.arraycopy(array, 0, objs, 0, index);
+        System.arraycopy(array, index, objs, index + 1, array.length - index);
         return objs;
     }
 }

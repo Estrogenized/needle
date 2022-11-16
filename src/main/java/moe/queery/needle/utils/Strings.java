@@ -37,9 +37,7 @@ public final class Strings {
         final char[] chars = input.toCharArray();
         final char space = ' ';
         for (int i = 0; i < input.length(); i++) {
-            final char
-                    preChar = chars[Math.max(0, i - 1)],
-                    currChar = chars[i];
+            final char preChar = chars[Math.max(0, i - 1)], currChar = chars[i];
             if (i == 0) continue;
             if (currChar == space && i > input.length() - 1) continue;
             if (preChar == space && currChar == space) continue;
