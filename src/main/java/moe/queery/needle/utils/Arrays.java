@@ -402,4 +402,134 @@ public final class Arrays {
         System.arraycopy(array, index, objs, index + 1, array.length - index);
         return objs;
     }
+
+    // @formatter:off
+    public static int indexOf(final boolean[] array, final boolean find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final boolean[] array, final boolean find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final short[] array, final short find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final short[] array, final short find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final int[] array, final int find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final int[] array, final int find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final long[] array, final long find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final long[] array, final long find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final float[] array, final float find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final float[] array, final float find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final double[] array, final double find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final double[] array, final double find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final byte[] array, final byte find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final byte[] array, final byte find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final char[] array, final char find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final char[] array, final char find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final String[] array, final String find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final String[] array, final String find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
+
+    // @formatter:off
+    public static int indexOf(final Object[] array, final Object find) { return indexOf(array, find, 0); }
+    // @formatter:on
+    public static int indexOf(final Object[] array, final Object find, int startIndex) {
+        if (array.length == 0) return -1;
+        if (startIndex < 0) startIndex = 0;
+        for (int i = startIndex; i < array.length; i++) {
+            if (!Objects.equals(find, array[i])) continue;
+            return i;
+        }
+        return -1;
+    }
 }
