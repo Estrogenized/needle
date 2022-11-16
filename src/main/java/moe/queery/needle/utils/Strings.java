@@ -53,6 +53,13 @@ public final class Strings {
         return string.substring(0, string.length() - joining.length());
     }
 
+    public static String abbreviateMiddle(final String str, final String middle, final int length) {
+        if (str.isEmpty() || middle.isEmpty()) return str;
+        if (length >= str.length() || length < (middle.length() + 2)) return str;
+        final int target = length - middle.length();
+        return str.substring(0, target / 2 + target % 2) + middle + str.substring(str.length() - target / 2);
+    }
+
     public static String getLowerChars() {
         return LOWER_CHARS;
     }
