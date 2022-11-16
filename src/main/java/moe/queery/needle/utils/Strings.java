@@ -141,4 +141,62 @@ public final class Strings {
         }
         return sb.toString();
     }
+
+    public static int indexOfDifference(final CharSequence... css) {
+        if (css.length <= 1) return -1;
+        boolean anyStringNull = false;
+        boolean allStringsNull = true;
+        final int arrayLen = css.length;
+        int shortestStrLen = Integer.MAX_VALUE;
+        int longestStrLen = 0;
+
+        for (final CharSequence cs : css) {
+            if (cs == null) {
+                anyStringNull = true;
+                shortestStrLen = 0;
+            } else {
+                allStringsNull = false;
+                shortestStrLen = Math.min(cs.length(), shortestStrLen);
+                longestStrLen = Math.max(cs.length(), longestStrLen);
+            }
+        }
+
+        if (allStringsNull || longestStrLen == 0 && !anyStringNull) return -1;
+        if (shortestStrLen == 0) return 0;
+
+        int firstDiff = -1;
+        for (int stringPos = 0; stringPos < shortestStrLen; stringPos++) {
+            final char comparisonChar = css[0].charAt(stringPos);
+            for (int arrayPos = 1; arrayPos < arrayLen; arrayPos++) {
+                if (css[arrayPos].charAt(stringPos) != comparisonChar) {
+                    firstDiff = stringPos;
+                    break;
+                }
+            }
+            if (firstDiff != -1) break;
+        }
+
+        if (firstDiff == -1 && shortestStrLen != longestStrLen) return shortestStrLen;
+        return firstDiff;
+    }
+
+    public static int indexOfDifference(final CharSequence cs1, final CharSequence cs2) {
+        if (cs1 == cs2) return -1;
+        if (cs1 == null || cs2 == null) return 0;
+        int i;
+        for (i = 0; i < cs1.length() && i < cs2.length(); ++i) {
+            if (cs1.charAt(i) != cs2.charAt(i)) break;
+        }
+        if (i < cs2.length() || i < cs1.length()) return i;
+        return -1;
+    }
+
+
+    public static String getCommonPrefix(final String... strings) {
+        if (strings.length == 0) return "";
+        final int smallestIndexOfDiff = indexOfDifference(strings);
+        if (smallestIndexOfDiff == -1) return strings[0] == null ? "" : strings[0];
+        else if (smallestIndexOfDiff == 0) return "";
+        else return strings[0].substring(0, smallestIndexOfDiff);
+    }
 }
