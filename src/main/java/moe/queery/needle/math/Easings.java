@@ -57,6 +57,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Back(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 final double x = value / this.duration;
                 final double c1 = 1.70158, c3 = c1 + 1;
@@ -67,6 +71,10 @@ public final class Easings {
         public static final class Bounce extends Easing {
             public Bounce(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Bounce(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             private double out(final double value) {
@@ -89,6 +97,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Circ(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 return 1 - Math.sqrt(1 - Math.pow(value / this.duration, 2));
             }
@@ -99,6 +111,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Cubic(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 return Math.pow(value / this.duration, 3);
             }
@@ -107,6 +123,10 @@ public final class Easings {
         public static final class Elastic extends Easing {
             public Elastic(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Elastic(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -121,6 +141,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Expo(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 final double x = value / this.duration;
                 return x == 0 ? 0 : Math.pow(2, 10 * x - 10);
@@ -130,6 +154,10 @@ public final class Easings {
         public static final class Quad extends Easing {
             public Quad(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Quad(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -142,6 +170,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Quart(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 return Math.pow(value / this.duration, 4);
             }
@@ -150,6 +182,10 @@ public final class Easings {
         public static final class Quint extends Easing {
             public Quint(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Quint(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -162,6 +198,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Sine(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 return 1 - Math.cos(((value / this.duration) * PI) / 2);
             }
@@ -172,6 +212,10 @@ public final class Easings {
         public static final class Bounce extends Easing {
             public Bounce(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Bounce(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -191,6 +235,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Back(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 final double x = value / this.duration;
                 final double c1 = 1.70158, c3 = c1 + 1;
@@ -203,6 +251,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Circ(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 return Math.sqrt(1 - Math.pow(value / this.duration - 1, 2));
             }
@@ -213,6 +265,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Cubic(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 return 1 - Math.pow(1 - (value / this.duration), 3);
             }
@@ -221,6 +277,10 @@ public final class Easings {
         public static final class Elastic extends Easing {
             public Elastic(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Elastic(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -234,6 +294,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Expo(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 final double x = value / this.duration;
                 return x == 1 ? 1 : 1 - Math.pow(2, -10 * x);
@@ -243,6 +307,10 @@ public final class Easings {
         public static final class Quad extends Easing {
             public Quad(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Quad(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -255,6 +323,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Quart(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 return 1 - Math.pow(1 - (value / this.duration), 4);
             }
@@ -263,6 +335,10 @@ public final class Easings {
         public static final class Quint extends Easing {
             public Quint(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Quint(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -275,6 +351,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Sine(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 return Math.sin(((value / this.duration) * PI) / 2);
             }
@@ -285,6 +365,10 @@ public final class Easings {
         public static final class Bounce extends Easing {
             public Bounce(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Bounce(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             private double out(double value) {
@@ -309,6 +393,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Back(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 final double x = value / this.duration;
                 final double c1 = 1.70158, c2 = c1 * 1.525;
@@ -321,6 +409,10 @@ public final class Easings {
         public static final class Circ extends Easing {
             public Circ(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Circ(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -336,6 +428,10 @@ public final class Easings {
                 super(millis, end);
             }
 
+            public Cubic(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
+            }
+
             protected @Override double equation(final double value) {
                 final double x = value / this.duration;
                 return x < 0.5 ? 4 * Math.pow(x, 3) : 1 - Math.pow(-2 * x + 2, 3) / 2;
@@ -345,6 +441,10 @@ public final class Easings {
         public static final class Elastic extends Easing {
             public Elastic(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Elastic(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -360,6 +460,10 @@ public final class Easings {
         public static final class Expo extends Easing {
             public Expo(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Expo(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
@@ -418,6 +522,10 @@ public final class Easings {
         public static final class Sine extends Easing {
             public Sine(final int millis, final double end) {
                 super(millis, end);
+            }
+
+            public Sine(final int millis, final double end, final boolean backwards) {
+                super(millis, end, backwards);
             }
 
             protected @Override double equation(final double value) {
