@@ -165,71 +165,71 @@ public final class Arrays {
 
     public static boolean[] merge(final boolean[] array1, final boolean[] array2) {
         final boolean[] objs = new boolean[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static short[] merge(final short[] array1, final short[] array2) {
         final short[] objs = new short[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static int[] merge(final int[] array1, final int[] array2) {
         final int[] objs = new int[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static long[] merge(final long[] array1, final long[] array2) {
         final long[] objs = new long[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static float[] merge(final float[] array1, final float[] array2) {
         final float[] objs = new float[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static double[] merge(final double[] array1, final double[] array2) {
         final double[] objs = new double[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static byte[] merge(final byte[] array1, final byte[] array2) {
         final byte[] objs = new byte[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static char[] merge(final char[] array1, final char[] array2) {
         final char[] objs = new char[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static String[] merge(final String[] array1, final String[] array2) {
         final String[] objs = new String[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
     public static Object[] merge(final Object[] array1, final Object[] array2) {
         final Object[] objs = new Object[array1.length + array2.length];
-        System.arraycopy(array1, 0, objs, array1.length, array1.length);
-        System.arraycopy(array2, 0, objs, array2.length, array2.length);
+        System.arraycopy(array1, 0, objs, 0, array1.length);
+        System.arraycopy(array2, 0, objs, array1.length, array2.length);
         return objs;
     }
 
