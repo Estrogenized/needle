@@ -48,7 +48,7 @@ public class DoubleValue implements IValue, Nameable {
     }
 
     public void setValue(final double value) {
-        this.value = value;
+        this.change.accept(this.value, this.value = value);
     }
 
     public @NotNull DoubleArrayList getValues() {
