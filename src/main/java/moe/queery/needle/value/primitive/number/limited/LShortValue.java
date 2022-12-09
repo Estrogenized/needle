@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import de.liminal.base.value.primitive.number.ShortValue;
+import moe.queery.needle.value.primitive.number.ShortValue;
 
 public final class LShortValue extends ShortValue {
     private final short min, max;

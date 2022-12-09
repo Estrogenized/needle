@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import de.liminal.base.value.primitive.number.IntValue;
+import moe.queery.needle.value.primitive.number.IntValue;
 
 public final class LIntValue extends IntValue {
     private final int min, max;

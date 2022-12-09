@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import de.liminal.base.value.primitive.number.LongValue;
+import moe.queery.needle.value.primitive.number.LongValue;
 
 public final class LLongValue extends LongValue {
     private final long min, max;

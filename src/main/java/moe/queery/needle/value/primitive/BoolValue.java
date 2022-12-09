@@ -1,8 +1,8 @@
 package moe.queery.needle.value.primitive;
 
-import de.liminal.base.registry.interfaces.INameable;
-import de.liminal.base.value.IValue;
 import it.unimi.dsi.fastutil.booleans.BooleanArrayList;
+import moe.queery.needle.iface.INameable;
+import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 
 public final class BoolValue implements IValue, INameable {

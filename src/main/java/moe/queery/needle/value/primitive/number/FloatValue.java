@@ -1,8 +1,8 @@
 package moe.queery.needle.value.primitive.number;
 
-import de.liminal.base.registry.interfaces.INameable;
-import de.liminal.base.value.IValue;
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
+import moe.queery.needle.iface.INameable;
+import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 
 public class FloatValue implements IValue, INameable {

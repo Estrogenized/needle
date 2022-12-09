@@ -1,8 +1,8 @@
 package moe.queery.needle.value.primitive.number;
 
-import de.liminal.base.registry.interfaces.INameable;
-import de.liminal.base.value.IValue;
 import it.unimi.dsi.fastutil.shorts.ShortArrayList;
+import moe.queery.needle.iface.INameable;
+import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 
 public class ShortValue implements IValue, INameable {

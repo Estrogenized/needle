@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import de.liminal.base.value.primitive.number.FloatValue;
+import moe.queery.needle.value.primitive.number.FloatValue;
 
 public final class LFloatValue extends FloatValue {
     private final float min, max;

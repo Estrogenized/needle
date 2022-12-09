@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import de.liminal.base.value.primitive.number.DoubleValue;
+import moe.queery.needle.value.primitive.number.DoubleValue;
 
 public final class LDoubleValue extends DoubleValue {
     private final double min, max;
