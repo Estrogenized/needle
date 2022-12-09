@@ -1,6 +1,6 @@
 package moe.queery.needle.iface;
 
-public interface IService extends INameable {
+public interface Service extends Nameable {
     void start();
     void stop();
     boolean isPre();

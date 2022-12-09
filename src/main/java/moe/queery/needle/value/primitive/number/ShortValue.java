@@ -1,20 +1,38 @@
 package moe.queery.needle.value.primitive.number;
 
 import it.unimi.dsi.fastutil.shorts.ShortArrayList;
-import moe.queery.needle.iface.INameable;
+import moe.queery.needle.iface.Nameable;
+import moe.queery.needle.iface.consumer.bi.number.ShortBiConsumer;
 import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class ShortValue implements IValue, INameable {
-    private final ShortArrayList values;
+public class ShortValue implements IValue, Nameable {
+    // @formatter:off
+    private static final ShortBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
+    // @formatter:on
+    private final ShortBiConsumer change; // left: previous ; right: new
+    private final @NotNull ShortArrayList values;
 
-    private final String name;
+    private final @NotNull String name;
 
     private short value;
 
-    public ShortValue(final String name, final short value, final short... values) {
+    // @formatter:off
+    ShortValue() { this("Empty", (short) 0); }
+    // @formatter:on
+
+    public ShortValue(final @NotNull String name, final short value,
+                      final short @NotNull ... values) {
+        this(name, value, null, values);
+    }
+
+    public ShortValue(final @NotNull String name, final short value,
+                      final @Nullable ShortBiConsumer change,
+                      final short @NotNull ... values) {
         this.name = name;
         this.value = value;
+        this.change = change == null ? EMPTY_CHANGE : change;
         this.values = new ShortArrayList(values);
     }
 
@@ -28,10 +46,10 @@ public class ShortValue implements IValue, INameable {
     }
 
     public void setValue(final short value) {
-        this.value = value;
+        this.change.accept(this.value, this.value = value);
     }
 
-    public ShortArrayList getValues() {
+    public @NotNull ShortArrayList getValues() {
         return this.values;
     }
 }

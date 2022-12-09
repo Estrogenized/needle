@@ -2,19 +2,34 @@ package moe.queery.needle.value;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
-import moe.queery.needle.iface.INameable;
+import moe.queery.needle.Sneaky;
+import moe.queery.needle.iface.Nameable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public final class GenericValue<V> implements IValue, INameable {
-    private final ObjectList<V> values;
+import java.util.function.BiConsumer;
 
-    private final String name;
+public final class GenericValue<V> implements IValue, Nameable {
+    // @formatter:off
+    private static final BiConsumer<Object, Object> EMPTY_CHANGE = (prevV, newV) -> {};
+    // @formatter:on
+    private final BiConsumer<V, V> change; // left: previous ; right: new
+    private final @NotNull ObjectList<@NotNull V> values;
+    private final @NotNull String name;
+    private @NotNull V value;
 
-    private V value;
 
-    public @SafeVarargs GenericValue(final String name, final V value, final V... values) {
+    public @SafeVarargs GenericValue(final @NotNull String name, final @NotNull V value,
+                                     final @NotNull V @NotNull ... values) {
+        this(name, value, null, values);
+    }
+
+    public @SafeVarargs GenericValue(final @NotNull String name, final @NotNull V value,
+                                     final @Nullable BiConsumer<@NotNull V, @NotNull V> change,
+                                     final @NotNull V @NotNull ... values) {
         this.name = name;
         this.value = value;
+        this.change = change == null ? Sneaky.cast(EMPTY_CHANGE) : change;
         this.values = new ObjectArrayList<>(values);
     }
 
@@ -23,15 +38,15 @@ public final class GenericValue<V> implements IValue, INameable {
         return this.name;
     }
 
-    public V getValue() {
+    public @NotNull V getValue() {
         return this.value;
     }
 
-    public void setValue(final V value) {
-        this.value = value;
+    public void setValue(final @NotNull V value) {
+        this.change.accept(this.value, this.value = value);
     }
 
-    public ObjectList<V> getValues() {
+    public @NotNull ObjectList<@NotNull V> getValues() {
         return this.values;
     }
 }

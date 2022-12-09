@@ -1,20 +1,38 @@
 package moe.queery.needle.value.primitive.number;
 
 import it.unimi.dsi.fastutil.longs.LongArrayList;
-import moe.queery.needle.iface.INameable;
+import moe.queery.needle.iface.Nameable;
+import moe.queery.needle.iface.consumer.bi.number.LongBiConsumer;
 import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class LongValue implements IValue, INameable {
-    private final LongArrayList values;
+public class LongValue implements IValue, Nameable {
+    // @formatter:off
+    private static final LongBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
+    // @formatter:on
+    private final LongBiConsumer change; // left: previous ; right: new
+    private final @NotNull LongArrayList values;
 
-    private final String name;
+    private final @NotNull String name;
 
     private long value;
 
-    public LongValue(final String name, final long value, final long... values) {
+    // @formatter:off
+    LongValue() { this("Empty", 0L); }
+    // @formatter:on
+
+    public LongValue(final @NotNull String name, final long value,
+                     final long @NotNull ... values) {
+        this(name, value, null, values);
+    }
+
+    public LongValue(final @NotNull String name, final long value,
+                     final @Nullable LongBiConsumer change,
+                     final long @NotNull ... values) {
         this.name = name;
         this.value = value;
+        this.change = change == null ? EMPTY_CHANGE : change;
         this.values = new LongArrayList(values);
     }
 
@@ -28,10 +46,10 @@ public class LongValue implements IValue, INameable {
     }
 
     public void setValue(final long value) {
-        this.value = value;
+        this.change.accept(this.value, this.value = value);
     }
 
-    public LongArrayList getValues() {
+    public @NotNull LongArrayList getValues() {
         return this.values;
     }
 }

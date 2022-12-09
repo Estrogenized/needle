@@ -1,9 +1,9 @@
 package moe.queery.needle.registry.list;
 
-import moe.queery.needle.iface.INameable;
+import moe.queery.needle.iface.Nameable;
 import org.jetbrains.annotations.Nullable;
 
-public class NamedListRegistry<V extends INameable> extends ListRegistry<V> {
+public class NamedListRegistry<V extends Nameable> extends ListRegistry<V> {
     public NamedListRegistry(final int capacity) {
         super(capacity);
     }

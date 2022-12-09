@@ -2,6 +2,6 @@ package moe.queery.needle.iface;
 
 import org.jetbrains.annotations.NotNull;
 
-public interface ICopyable<C extends ICopyable<C>> {
+public interface Copyable<C extends Copyable<C>> {
     @NotNull C copy();
 }

@@ -1,12 +1,28 @@
 package moe.queery.needle.value.primitive.number.limited;
 
+import moe.queery.needle.iface.consumer.bi.number.LongBiConsumer;
 import moe.queery.needle.value.primitive.number.LongValue;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public final class LLongValue extends LongValue {
     private final long min, max;
 
-    public LLongValue(final String name, final long value, final long min, final long max, final long... values) {
-        super(name, value, values);
+    // @formatter:off
+    LLongValue() { this("Empty", 0L, 0L, 0L); }
+    // @formatter:on
+
+    public LLongValue(final @NotNull String name, final long value,
+                      final long min, final long max,
+                      final long @NotNull ... values) {
+        this(name, value, min, max, null, values);
+    }
+
+    public LLongValue(final @NotNull String name, final long value,
+                      final long min, final long max,
+                      final @Nullable LongBiConsumer change,
+                      final long @NotNull ... values) {
+        super(name, value, change, values);
         this.min = min;
         this.max = max;
     }

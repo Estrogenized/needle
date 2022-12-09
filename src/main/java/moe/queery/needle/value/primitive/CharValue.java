@@ -1,20 +1,38 @@
 package moe.queery.needle.value.primitive;
 
 import it.unimi.dsi.fastutil.chars.CharArrayList;
-import moe.queery.needle.iface.INameable;
+import moe.queery.needle.iface.Nameable;
+import moe.queery.needle.iface.consumer.bi.CharBiConsumer;
 import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public final class CharValue implements IValue, INameable {
-    private final CharArrayList values;
+public final class CharValue implements IValue, Nameable {
+    // @formatter:off
+    private static final CharBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
+    // @formatter:on
+    private final CharBiConsumer change; // left: previous ; right: new
+    private final @NotNull CharArrayList values;
 
-    private final String name;
+    private final @NotNull String name;
 
     private char value;
 
-    public CharValue(final String name, final char value, final char... values) {
+    // @formatter:off
+    CharValue() { this("Empty", ' '); }
+    // @formatter:on
+
+    public CharValue(final @NotNull String name, final char value,
+                     final char @NotNull ... values) {
+        this(name, value, null, values);
+    }
+
+    public CharValue(final @NotNull String name, final char value,
+                     final @Nullable CharBiConsumer change,
+                     final char @NotNull ... values) {
         this.name = name;
         this.value = value;
+        this.change = change == null ? EMPTY_CHANGE : change;
         this.values = new CharArrayList(values);
     }
 
@@ -28,10 +46,10 @@ public final class CharValue implements IValue, INameable {
     }
 
     public void setValue(final char value) {
-        this.value = value;
+        this.change.accept(this.value, this.value = value);
     }
 
-    public CharArrayList getValues() {
+    public @NotNull CharArrayList getValues() {
         return this.values;
     }
 }
