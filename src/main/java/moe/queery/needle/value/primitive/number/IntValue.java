@@ -46,7 +46,7 @@ public class IntValue implements IValue, Nameable {
     }
 
     public void setValue(final int value) {
-        this.change.accept(this.value, this.value = value);
+        this.change.acceptInt(this.value, this.value = value);
     }
 
     public @NotNull IntArrayList getValues() {

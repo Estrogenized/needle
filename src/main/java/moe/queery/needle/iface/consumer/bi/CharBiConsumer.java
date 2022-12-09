@@ -8,6 +8,7 @@ import java.util.function.BiConsumer;
 public interface CharBiConsumer extends BiConsumer<@NotNull Character, @NotNull Character> {
     void acceptChar(final char left, final char right);
 
+    @Deprecated
     default @Override void accept(final @NotNull Character left, final @NotNull Character right) {
         this.acceptChar(left, right);
     }

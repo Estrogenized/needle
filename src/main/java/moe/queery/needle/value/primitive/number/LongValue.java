@@ -46,7 +46,7 @@ public class LongValue implements IValue, Nameable {
     }
 
     public void setValue(final long value) {
-        this.change.accept(this.value, this.value = value);
+        this.change.acceptLong(this.value, this.value = value);
     }
 
     public @NotNull LongArrayList getValues() {

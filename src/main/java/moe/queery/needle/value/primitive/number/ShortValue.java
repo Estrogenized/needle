@@ -46,7 +46,7 @@ public class ShortValue implements IValue, Nameable {
     }
 
     public void setValue(final short value) {
-        this.change.accept(this.value, this.value = value);
+        this.change.acceptShort(this.value, this.value = value);
     }
 
     public @NotNull ShortArrayList getValues() {

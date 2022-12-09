@@ -46,7 +46,7 @@ public class FloatValue implements IValue, Nameable {
     }
 
     public void setValue(final float value) {
-        this.change.accept(this.value, this.value = value);
+        this.change.acceptFloat(this.value, this.value = value);
     }
 
     public @NotNull FloatArrayList getValues() {

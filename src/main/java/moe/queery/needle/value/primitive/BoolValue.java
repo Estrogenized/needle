@@ -46,7 +46,7 @@ public final class BoolValue implements IValue, Nameable {
     }
 
     public void setValue(final boolean value) {
-        this.change.accept(this.value, this.value = value);
+        this.change.acceptBool(this.value, this.value = value);
     }
 
     public @NotNull BooleanArrayList getValues() {

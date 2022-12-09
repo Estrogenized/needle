@@ -46,7 +46,7 @@ public final class CharValue implements IValue, Nameable {
     }
 
     public void setValue(final char value) {
-        this.change.accept(this.value, this.value = value);
+        this.change.acceptChar(this.value, this.value = value);
     }
 
     public @NotNull CharArrayList getValues() {
