@@ -9,7 +9,7 @@ public class NamedListRegistry<V extends INameable> extends ListRegistry<V> {
     }
 
     @SuppressWarnings("unchecked") // it's checked ffs ._.
-    public <T extends V> @Nullable T getByName(final String name, final boolean ignoreCase) {
+    public <T extends V> @Nullable T getValueByName(final String name, final boolean ignoreCase) {
         for (final V value : this.getValues()) {
             if (!(ignoreCase ? value.getName().equalsIgnoreCase(name) : value.getName().equals(name))) continue;
             return (T) value;
