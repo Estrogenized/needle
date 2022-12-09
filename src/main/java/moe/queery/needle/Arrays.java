@@ -1,4 +1,4 @@
-package moe.queery.needle.utils;
+package moe.queery.needle;
 
 import java.util.Objects;
 

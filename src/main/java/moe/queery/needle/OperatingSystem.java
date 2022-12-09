@@ -1,6 +1,6 @@
-package moe.queery.needle.utils;
+package moe.queery.needle;
 
-public enum OperatingSystem {
+public enum OperatingSystem { // TODO: recode
     WIN_X86, WIN_X64, WIN_ARM64,
     LINUX_X86, LINUX_X64, LINUX_ARM64,
     MAC_X64, MAC_X86, MAC_ARM64,

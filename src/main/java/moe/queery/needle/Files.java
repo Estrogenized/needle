@@ -19,8 +19,10 @@ import java.util.zip.ZipInputStream;
 import static java.nio.file.Files.*;
 
 public final class Files {
+    private static final String DEFAULT_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.117";
+
     public static @NotNull File download(final String url, final File output) throws Throwable {
-        return download(url, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.117", output);
+        return download(url, DEFAULT_AGENT, output);
     }
 
     public static @NotNull File download(final String url, final String agent, final File output) throws Throwable {

@@ -1,4 +1,4 @@
-package moe.queery.needle.types;
+package moe.queery.needle.type;
 
 import java.util.Collection;
 import java.util.LinkedList;

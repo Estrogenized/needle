@@ -1,4 +1,4 @@
-package moe.queery.needle.types;
+package moe.queery.needle.type;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

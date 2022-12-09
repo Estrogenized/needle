@@ -1,4 +1,4 @@
-package moe.queery.needle.utils;
+package moe.queery.needle;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;

@@ -16,8 +16,9 @@ public final class Color {
     public static final Color CYAN       = new Color(0, 255, 255);
     public static final Color BLUE       = new Color(0, 0, 255);
     //@formatter:on
-
+    private static final int FULL_HEX = 0xFF;
     private final int rgba;
+    private final int red, green, blue, alpha;
 
     public Color(final int r, final int g, final int b) {
         this(r, g, b, 255);
@@ -33,6 +34,10 @@ public final class Color {
 
     public Color(final int rgba) {
         this.rgba = rgba;
+        this.red = (rgba >> 16) & FULL_HEX;
+        this.green = (rgba >> 8) & FULL_HEX;
+        this.blue = rgba & FULL_HEX;
+        this.alpha = (rgba >> 24) & FULL_HEX;
     }
 
     public int getRGBA() {
@@ -40,23 +45,23 @@ public final class Color {
     }
 
     public int getRed() {
-        return (getRGBA() >> 16) & 0xFF;
+        return this.red;
     }
 
     public int getGreen() {
-        return (getRGBA() >> 8) & 0xFF;
+        return this.green;
     }
 
     public int getBlue() {
-        return getRGBA() & 0xFF;
+        return this.blue;
     }
 
     public int getAlpha() {
-        return (getRGBA() >> 24) & 0xff;
+        return this.alpha;
     }
 
     public Color darker(final float factor) {
-        return new Color(Math.max((int) (getRed() * factor), 0), Math.max((int) (getGreen() * factor), 0), Math.max((int) (getBlue() * factor), 0), getAlpha());
+        return new Color(Math.max((int) (getRed() * factor), 0), Math.max((int) (this.green * factor), 0), Math.max((int) (getBlue() * factor), 0), getAlpha());
     }
 
     public Color brighter(final float factor) {

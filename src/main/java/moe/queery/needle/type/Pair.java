@@ -1,4 +1,4 @@
-package moe.queery.needle.types;
+package moe.queery.needle.type;
 
 public class Pair<K, V> {
     private K key;
