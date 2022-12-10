@@ -1,34 +1,41 @@
 package moe.queery.needle.type;
 
-import java.util.Collection;
-import java.util.LinkedList;
+import java.util.Collections;
+import java.util.List;
 
-public class EvictingList<T> extends LinkedList<T> {
+public final class EvictingList<V> {
+    private final List<V> list;
+
     private final int maxSize;
 
-    public EvictingList(final int maxSize) {
+    // @formatter:off
+    EvictingList() { this(Collections.emptyList(), 0); }
+    // @formatter:off
+
+    public EvictingList(final List<V> list, final int maxSize) {
+        this.list = list;
         this.maxSize = maxSize;
     }
 
-    public EvictingList(final Collection<? extends T> c, final int maxSize) {
-        super(c);
-        this.maxSize = maxSize;
+    public boolean add(final V value) {
+        final boolean removedFirstEntry;
+        if (this.isFull()) {
+            this.list.remove(this.list.get(0));
+            removedFirstEntry = true;
+        } else removedFirstEntry = false;
+        this.list.add(value);
+        return removedFirstEntry;
+    }
+
+    public boolean isFull() {
+        return this.list.size() >= this.maxSize;
+    }
+
+    public List<V> getNormalList() {
+        return this.list;
     }
 
     public int getMaxSize() {
         return this.maxSize;
-    }
-
-    public boolean add(final T t) {
-        if (this.isFull()) this.removeFirst();
-        return super.add(t);
-    }
-
-    public boolean addAll(final Collection<? extends T> c) {
-        return c.stream().anyMatch(this::add);
-    }
-
-    public boolean isFull() {
-        return this.size() >= this.maxSize;
     }
 }

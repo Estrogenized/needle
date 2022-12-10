@@ -41,7 +41,7 @@ public final class Color {
     }
 
     public int getRGBA() {
-        return rgba;
+        return this.rgba;
     }
 
     public int getRed() {
