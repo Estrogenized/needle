@@ -1,4 +1,4 @@
-package moe.queery.needle.type;
+package moe.queery.needle.collection.evicting;
 
 import java.util.Collections;
 import java.util.Map;

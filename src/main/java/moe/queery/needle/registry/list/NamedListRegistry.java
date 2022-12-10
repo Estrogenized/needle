@@ -5,7 +5,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class NamedListRegistry<V extends Nameable> extends ListRegistry<V> {
     public NamedListRegistry(final int capacity) {
-        super(capacity);
+        super();
     }
 
     @SuppressWarnings("unchecked") // it's checked ffs ._.

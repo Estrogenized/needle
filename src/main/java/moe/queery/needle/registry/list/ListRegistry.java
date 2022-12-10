@@ -18,7 +18,7 @@ public class ListRegistry<V> {
     private ObjectList<V> values, preLockedValues;
     private boolean locked = false;
 
-    public ListRegistry(final int capacity) {
+    public ListRegistry() {
         this.values = new ObjectArrayList<>();
     }
 

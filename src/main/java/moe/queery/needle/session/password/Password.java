@@ -4,7 +4,7 @@ import com.nulabinc.zxcvbn.Strength;
 import com.nulabinc.zxcvbn.Zxcvbn;
 import moe.queery.needle.Strings;
 import moe.queery.needle.math.Randoms;
-import moe.queery.needle.type.Pair;
+import moe.queery.needle.type.pair.Pair;
 
 import java.security.SecureRandom;
 import java.util.regex.Pattern;
