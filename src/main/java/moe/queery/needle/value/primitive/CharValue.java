@@ -1,8 +1,8 @@
 package moe.queery.needle.value.primitive;
 
 import it.unimi.dsi.fastutil.chars.CharArrayList;
-import moe.queery.needle.iface.Nameable;
-import moe.queery.needle.iface.consumer.bi.CharBiConsumer;
+import moe.queery.needle.Nameable;
+import moe.queery.needle.type.consumer.bi.CharBiConsumer;
 import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

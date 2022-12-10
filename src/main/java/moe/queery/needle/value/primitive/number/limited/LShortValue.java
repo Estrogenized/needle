@@ -1,8 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
-import moe.queery.needle.iface.consumer.bi.number.DoubleBiConsumer;
-import moe.queery.needle.iface.consumer.bi.number.ShortBiConsumer;
+import moe.queery.needle.type.consumer.bi.number.ShortBiConsumer;
 import moe.queery.needle.value.primitive.number.ShortValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

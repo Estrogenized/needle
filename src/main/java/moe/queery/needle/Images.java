@@ -10,6 +10,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
 public final class Images {
+    // @formatter:off
+    Images() throws InstantiationException { throw new InstantiationException("it's an utility class!"); }
+    // @formatter:on
+
     public static @Nullable InputStream imageToInputStream(final BufferedImage image) {
         InputStream inputStream;
         try {

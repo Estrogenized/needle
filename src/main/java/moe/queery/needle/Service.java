@@ -1,4 +1,4 @@
-package moe.queery.needle.iface;
+package moe.queery.needle;
 
 public interface Service extends Nameable {
     void start();

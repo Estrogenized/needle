@@ -4,6 +4,10 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
 public final class Sneaky {
+    // @formatter:off
+    Sneaky() throws InstantiationException { throw new InstantiationException("it's an utility class!"); }
+    // @formatter:on
+
     @Contract("null->null;!null->!null")
     @SuppressWarnings("unchecked")
     public @Nullable

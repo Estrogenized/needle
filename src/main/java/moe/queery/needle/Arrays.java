@@ -3,6 +3,10 @@ package moe.queery.needle;
 import java.util.Objects;
 
 public final class Arrays {
+    // @formatter:off
+    Arrays() throws InstantiationException { throw new InstantiationException("it's an utility class!"); }
+    // @formatter:on
+
     public static boolean contains(final boolean[] array, final boolean value) {
         for (final boolean obj : array) {
             if (!Objects.equals(obj, value)) continue;

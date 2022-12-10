@@ -11,6 +11,10 @@ public final class Strings {
     // @formatter:on
 
     // @formatter:off
+    Strings() throws InstantiationException { throw new InstantiationException("it's an utility class!"); }
+    // @formatter:on
+
+    // @formatter:off
     public static String longestOf(final List<String> strings) { return longestOf(strings.toArray(new String[0])); }
     // @formatter:on
     public static String longestOf(final String... strings) {
@@ -30,19 +34,10 @@ public final class Strings {
         return smallestString;
     }
 
-    public static String getLowerChars() {
-        return LOWER_CHARS;
-    }
-
-    public static String getNumberChars() {
-        return NUMBER_CHARS;
-    }
-
-    public static String getSpecialChars() {
-        return SPECIAL_CHARS;
-    }
-
-    public static String getUpperChars() {
-        return UPPER_CHARS;
-    }
+    // @formatter:off
+    public static String getLowerChars()   { return LOWER_CHARS; }
+    public static String getNumberChars()  { return NUMBER_CHARS; }
+    public static String getSpecialChars() { return SPECIAL_CHARS; }
+    public static String getUpperChars()   { return UPPER_CHARS; }
+    // @formatter:on
 }

@@ -1,4 +1,4 @@
-package moe.queery.needle.iface;
+package moe.queery.needle;
 
 import org.jetbrains.annotations.NotNull;
 

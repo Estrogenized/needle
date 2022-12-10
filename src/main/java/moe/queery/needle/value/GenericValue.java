@@ -3,7 +3,7 @@ package moe.queery.needle.value;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import moe.queery.needle.Sneaky;
-import moe.queery.needle.iface.Nameable;
+import moe.queery.needle.Nameable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,6 +18,9 @@ public final class GenericValue<V> implements IValue, Nameable {
     private final @NotNull String name;
     private @NotNull V value;
 
+    // @formatter:off
+    @SuppressWarnings("all") GenericValue() { this("Empty", null); }
+    // @formatter:on
 
     public @SafeVarargs GenericValue(final @NotNull String name, final @NotNull V value,
                                      final @NotNull V @NotNull ... values) {

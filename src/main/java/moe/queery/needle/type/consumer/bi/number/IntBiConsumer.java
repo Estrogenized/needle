@@ -1,4 +1,4 @@
-package moe.queery.needle.iface.consumer.bi.number;
+package moe.queery.needle.type.consumer.bi.number;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;

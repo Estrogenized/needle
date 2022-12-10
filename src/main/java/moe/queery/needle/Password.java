@@ -1,10 +1,9 @@
-package moe.queery.needle.session.password;
+package moe.queery.needle;
 
 import com.nulabinc.zxcvbn.Strength;
 import com.nulabinc.zxcvbn.Zxcvbn;
-import moe.queery.needle.Strings;
 import moe.queery.needle.math.Randoms;
-import moe.queery.needle.type.pair.Pair;
+import moe.queery.needle.type.tuple.b.MutablePair;
 
 import java.security.SecureRandom;
 import java.util.regex.Pattern;
@@ -19,15 +18,17 @@ public final class Password {
     private static final Pattern UPPERCASE_PATTERN = Pattern.compile("[A-Z]+");
     private static final Pattern LOWERCASE_PATTERN = Pattern.compile("[a-z]+");
 
-    public static Pair<String, Strength> checkPasswordStrength(final String password) {
-        if (password.length() < 8) return new Pair<>("password_length", null);
-        if (!NUMBER_PATTERN.matcher(password).find()) return new Pair<>("password_number", null);
-        if (!UPPERCASE_PATTERN.matcher(password).find()) return new Pair<>("password_uppercase", null);
-        if (!LOWERCASE_PATTERN.matcher(password).find()) return new Pair<>("password_lowercase", null);
-        return new Pair<>("password_pass", ZXCVBN.measure(password));
+    private static final Strength EMPTY_STRENGTH = ZXCVBN.measure("");
+
+    public static MutablePair<String, Strength> checkPasswordStrength(final String password) {
+        if (password.length() < 8) return new MutablePair<>("password_length", EMPTY_STRENGTH);
+        if (!NUMBER_PATTERN.matcher(password).find()) return new MutablePair<>("password_number", EMPTY_STRENGTH);
+        if (!UPPERCASE_PATTERN.matcher(password).find()) return new MutablePair<>("password_uppercase", EMPTY_STRENGTH);
+        if (!LOWERCASE_PATTERN.matcher(password).find()) return new MutablePair<>("password_lowercase", EMPTY_STRENGTH);
+        return new MutablePair<>("password_pass", ZXCVBN.measure(password));
     }
 
-    public static String generateSecurePassword(final int minLength, final int maxLength, final boolean upper, final boolean lower, final boolean special, final boolean number) {
+    public static String generateSecurePassword(final int minLength, final int maxLength, final boolean lower, final boolean upper, final boolean number, final boolean special) {
         final String[] categories = new String[4];
         int index = 0;
         if (lower) categories[index++] = Strings.getLowerChars();
@@ -45,12 +46,12 @@ public final class Password {
         return password.toString();
     }
 
-    public static String generatePasswordWithMinScore(final int minLength, final int maxLength, final boolean upper, final boolean lower, final boolean special, final boolean number, final int trys, final int score) {
+    public static String generatePasswordWithMinScore(final int minLength, final int maxLength, final int trys, final int score, final boolean lower, final boolean upper, final boolean number, final boolean special) {
         for (int i = 0; i < trys; i++) {
-            final String password = generateSecurePassword(minLength, maxLength, upper, lower, special, number);
-            final Pair<String, Strength> passwordSecurity = checkPasswordStrength(password);
-            if (!(passwordSecurity.getKey().equalsIgnoreCase("password_pass")
-                    && passwordSecurity.getValue().getScore() >= score)) continue;
+            final String password = generateSecurePassword(minLength, maxLength, lower, upper, number, special);
+            final MutablePair<String, Strength> passwordSecurity = checkPasswordStrength(password);
+            if (!(passwordSecurity.getFirst().equalsIgnoreCase("password_pass")
+                    && passwordSecurity.getSecond().getScore() >= score)) continue;
             return password;
         }
         return "couldnt_find_password";
