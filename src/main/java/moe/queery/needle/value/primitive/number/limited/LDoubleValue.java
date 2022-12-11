@@ -5,7 +5,7 @@ import moe.queery.needle.value.primitive.number.DoubleValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class LDoubleValue extends DoubleValue {
+public class LDoubleValue extends DoubleValue {
     private final double min, max;
 
     // @formatter:off

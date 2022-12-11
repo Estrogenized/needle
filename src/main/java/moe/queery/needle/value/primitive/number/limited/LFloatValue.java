@@ -5,7 +5,7 @@ import moe.queery.needle.value.primitive.number.FloatValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class LFloatValue extends FloatValue {
+public class LFloatValue extends FloatValue {
     private final float min, max;
 
     // @formatter:off

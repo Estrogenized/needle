@@ -5,7 +5,7 @@ import moe.queery.needle.value.primitive.number.LongValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class LLongValue extends LongValue {
+public class LLongValue extends LongValue {
     private final long min, max;
 
     // @formatter:off

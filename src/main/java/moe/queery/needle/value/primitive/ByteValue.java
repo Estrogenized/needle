@@ -7,7 +7,7 @@ import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class ByteValue implements IValue, Nameable {
+public class ByteValue implements IValue, Nameable {
     // @formatter:off
     private static final ByteBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
     // @formatter:on

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiConsumer;
 
-public final class GenericValue<V> implements IValue, Nameable {
+public class GenericValue<V> implements IValue, Nameable {
     // @formatter:off
     private static final BiConsumer<Object, Object> EMPTY_CHANGE = (prevV, newV) -> {};
     // @formatter:on

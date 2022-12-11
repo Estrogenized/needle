@@ -5,7 +5,7 @@ import moe.queery.needle.value.primitive.number.IntValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class LIntValue extends IntValue {
+public class LIntValue extends IntValue {
     private final int min, max;
 
     // @formatter:off

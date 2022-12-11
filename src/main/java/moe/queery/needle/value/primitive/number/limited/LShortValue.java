@@ -5,7 +5,7 @@ import moe.queery.needle.value.primitive.number.ShortValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class LShortValue extends ShortValue {
+public class LShortValue extends ShortValue {
     private final short min, max;
 
     // @formatter:off

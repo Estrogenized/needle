@@ -7,7 +7,7 @@ import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class CharValue implements IValue, Nameable {
+public class CharValue implements IValue, Nameable {
     // @formatter:off
     private static final CharBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
     // @formatter:on
