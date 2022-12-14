@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import moe.queery.needle.type.consumer.bi.number.ShortBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.number.ShortBiConsumer;
 import moe.queery.needle.value.primitive.number.ShortValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

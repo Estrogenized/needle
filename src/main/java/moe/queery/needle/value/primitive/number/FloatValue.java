@@ -2,7 +2,7 @@ package moe.queery.needle.value.primitive.number;
 
 import it.unimi.dsi.fastutil.floats.FloatArrayList;
 import moe.queery.needle.Nameable;
-import moe.queery.needle.type.consumer.bi.number.FloatBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.number.FloatBiConsumer;
 import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

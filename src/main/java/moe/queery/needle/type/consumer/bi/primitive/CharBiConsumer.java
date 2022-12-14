@@ -1,4 +1,4 @@
-package moe.queery.needle.type.consumer.bi;
+package moe.queery.needle.type.consumer.bi.primitive;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;

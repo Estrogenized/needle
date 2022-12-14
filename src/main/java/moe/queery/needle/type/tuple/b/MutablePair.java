@@ -7,7 +7,7 @@ public final class MutablePair<A, B> extends Pair<@NotNull A, @NotNull B> {
     private @NotNull B second;
 
     // @formatter:off
-    @SuppressWarnings("all") public MutablePair() { this(null, null); }
+    @SuppressWarnings("all") MutablePair() { this(null, null); }
     // @formatter:on
 
     public MutablePair(final @NotNull A first, final @NotNull B second) {
@@ -16,13 +16,17 @@ public final class MutablePair<A, B> extends Pair<@NotNull A, @NotNull B> {
     }
 
     // @formatter:off
-    public @Override @NotNull A getFirst()                  { return this.first; }
-    public @Override @NotNull B getSecond()                 { return this.second; }
-    public @Override void setFirst (final @NotNull A key)   { this.first = key; }
-    public @Override void setSecond(final @NotNull B value) { this.second = value; }
+    public @Override @NotNull A getFirst()  { return this.first; }
+    public @Override @NotNull B getSecond() { return this.second; }
+    public @Override void setFirst (final @NotNull A first)  { this.first = first; }
+    public @Override void setSecond(final @NotNull B second) { this.second = second; }
     // @formatter:on
 
     public @Override String toString() {
-        return String.format("MutablePair{first=%s, second=%s}", this.getFirst(), this.getSecond());
+        return String.format(
+                "MutablePair{first=%s, second=%s}",
+                this.getFirst(),
+                this.getSecond()
+        );
     }
 }
