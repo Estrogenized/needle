@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-public interface ByteBiConsumer extends BiConsumer<@NotNull Byte, @NotNull Byte> {
+public interface Byte2ByteBiConsumer extends BiConsumer<@NotNull Byte, @NotNull Byte> {
     void acceptByte(final byte left, final byte right);
 
     @Deprecated
@@ -13,7 +13,7 @@ public interface ByteBiConsumer extends BiConsumer<@NotNull Byte, @NotNull Byte>
         this.acceptByte(left, right);
     }
 
-    default @Contract(pure = true) ByteBiConsumer andThenByte(final @NotNull ByteBiConsumer after) {
+    default @Contract(pure = true) Byte2ByteBiConsumer andThenByte(final @NotNull Byte2ByteBiConsumer after) {
         return (l, r) -> {
             this.acceptByte(l, r);
             after.acceptByte(l, r);

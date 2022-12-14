@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import moe.queery.needle.type.consumer.bi.primitive.number.DoubleBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.number.Double2DoubleBiConsumer;
 import moe.queery.needle.value.primitive.number.DoubleValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +21,7 @@ public class LDoubleValue extends DoubleValue {
 
     public LDoubleValue(final @NotNull String name, final double value,
                         final double min, final double max,
-                        final @Nullable DoubleBiConsumer change,
+                        final @Nullable Double2DoubleBiConsumer change,
                         final double @NotNull ... values) {
         super(name, value, change, values);
         this.min = min;

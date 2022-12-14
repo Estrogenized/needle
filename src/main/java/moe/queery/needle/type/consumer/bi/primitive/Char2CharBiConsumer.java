@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-public interface CharBiConsumer extends BiConsumer<@NotNull Character, @NotNull Character> {
+public interface Char2CharBiConsumer extends BiConsumer<@NotNull Character, @NotNull Character> {
     void acceptChar(final char left, final char right);
 
     @Deprecated
@@ -13,7 +13,7 @@ public interface CharBiConsumer extends BiConsumer<@NotNull Character, @NotNull 
         this.acceptChar(left, right);
     }
 
-    default @Contract(pure = true) CharBiConsumer andThenChar(final @NotNull CharBiConsumer after) {
+    default @Contract(pure = true) Char2CharBiConsumer andThenChar(final @NotNull Char2CharBiConsumer after) {
         return (l, r) -> {
             this.acceptChar(l, r);
             after.acceptChar(l, r);

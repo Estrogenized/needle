@@ -2,16 +2,16 @@ package moe.queery.needle.value.primitive.number;
 
 import it.unimi.dsi.fastutil.doubles.DoubleArrayList;
 import moe.queery.needle.Nameable;
-import moe.queery.needle.type.consumer.bi.primitive.number.DoubleBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.number.Double2DoubleBiConsumer;
 import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class DoubleValue implements IValue, Nameable {
     // @formatter:off
-    private static final DoubleBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
+    private static final Double2DoubleBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
     // @formatter:on
-    private final DoubleBiConsumer change; // left: previous ; right: new
+    private final Double2DoubleBiConsumer change; // left: previous ; right: new
     private final @NotNull DoubleArrayList values;
 
     private final @NotNull String name;
@@ -28,7 +28,7 @@ public class DoubleValue implements IValue, Nameable {
     }
 
     public DoubleValue(final @NotNull String name, final double value,
-                      final @Nullable DoubleBiConsumer change,
+                      final @Nullable Double2DoubleBiConsumer change,
                       final double @NotNull ... values) {
         this.name = name;
         this.value = value;

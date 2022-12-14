@@ -2,16 +2,16 @@ package moe.queery.needle.value.primitive.number;
 
 import it.unimi.dsi.fastutil.shorts.ShortArrayList;
 import moe.queery.needle.Nameable;
-import moe.queery.needle.type.consumer.bi.primitive.number.ShortBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.number.Short2ShortBiConsumer;
 import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ShortValue implements IValue, Nameable {
     // @formatter:off
-    private static final ShortBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
+    private static final Short2ShortBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
     // @formatter:on
-    private final ShortBiConsumer change; // left: previous ; right: new
+    private final Short2ShortBiConsumer change; // left: previous ; right: new
     private final @NotNull ShortArrayList values;
 
     private final @NotNull String name;
@@ -28,7 +28,7 @@ public class ShortValue implements IValue, Nameable {
     }
 
     public ShortValue(final @NotNull String name, final short value,
-                      final @Nullable ShortBiConsumer change,
+                      final @Nullable Short2ShortBiConsumer change,
                       final short @NotNull ... values) {
         this.name = name;
         this.value = value;

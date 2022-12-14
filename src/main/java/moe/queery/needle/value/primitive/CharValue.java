@@ -2,16 +2,16 @@ package moe.queery.needle.value.primitive;
 
 import it.unimi.dsi.fastutil.chars.CharArrayList;
 import moe.queery.needle.Nameable;
-import moe.queery.needle.type.consumer.bi.primitive.CharBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.Char2CharBiConsumer;
 import moe.queery.needle.value.IValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class CharValue implements IValue, Nameable {
     // @formatter:off
-    private static final CharBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
+    private static final Char2CharBiConsumer EMPTY_CHANGE = (empty1, empty2) -> {};
     // @formatter:on
-    private final CharBiConsumer change; // left: previous ; right: new
+    private final Char2CharBiConsumer change; // left: previous ; right: new
     private final @NotNull CharArrayList values;
 
     private final @NotNull String name;
@@ -28,7 +28,7 @@ public class CharValue implements IValue, Nameable {
     }
 
     public CharValue(final @NotNull String name, final char value,
-                     final @Nullable CharBiConsumer change,
+                     final @Nullable Char2CharBiConsumer change,
                      final char @NotNull ... values) {
         this.name = name;
         this.value = value;

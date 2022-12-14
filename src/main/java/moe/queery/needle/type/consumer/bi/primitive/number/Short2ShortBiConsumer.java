@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-public interface ShortBiConsumer extends BiConsumer<@NotNull Short, @NotNull Short> {
+public interface Short2ShortBiConsumer extends BiConsumer<@NotNull Short, @NotNull Short> {
     void acceptShort(final short left, final short right);
 
     @Deprecated
@@ -13,7 +13,7 @@ public interface ShortBiConsumer extends BiConsumer<@NotNull Short, @NotNull Sho
         this.acceptShort(left, right);
     }
 
-    default @Contract(pure = true) ShortBiConsumer andThenShort(final @NotNull ShortBiConsumer after) {
+    default @Contract(pure = true) Short2ShortBiConsumer andThenShort(final @NotNull Short2ShortBiConsumer after) {
         return (l, r) -> {
             this.acceptShort(l, r);
             after.acceptShort(l, r);

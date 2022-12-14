@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-public interface BoolBiConsumer extends BiConsumer<@NotNull Boolean, @NotNull Boolean> {
+public interface Bool2BoolBiConsumer extends BiConsumer<@NotNull Boolean, @NotNull Boolean> {
     void acceptBool(final boolean left, final boolean right);
 
     @Deprecated
@@ -13,7 +13,7 @@ public interface BoolBiConsumer extends BiConsumer<@NotNull Boolean, @NotNull Bo
         this.acceptBool(left, right);
     }
 
-    default @Contract(pure = true) BoolBiConsumer andThenBool(final @NotNull BoolBiConsumer after) {
+    default @Contract(pure = true) Bool2BoolBiConsumer andThenBool(final @NotNull Bool2BoolBiConsumer after) {
         return (l, r) -> {
             this.acceptBool(l, r);
             after.acceptBool(l, r);

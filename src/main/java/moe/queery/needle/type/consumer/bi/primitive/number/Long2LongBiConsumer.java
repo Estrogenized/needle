@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-public interface LongBiConsumer extends BiConsumer<@NotNull Long, @NotNull Long> {
+public interface Long2LongBiConsumer extends BiConsumer<@NotNull Long, @NotNull Long> {
     void acceptLong(final long left, final long right);
 
     @Deprecated
@@ -13,7 +13,7 @@ public interface LongBiConsumer extends BiConsumer<@NotNull Long, @NotNull Long>
         this.acceptLong(left, right);
     }
 
-    default @Contract(pure = true) LongBiConsumer andThenLong(final @NotNull LongBiConsumer after) {
+    default @Contract(pure = true) Long2LongBiConsumer andThenLong(final @NotNull Long2LongBiConsumer after) {
         return (l, r) -> {
             this.acceptLong(l, r);
             after.acceptLong(l, r);

@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import moe.queery.needle.type.consumer.bi.primitive.number.IntBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.number.Int2IntBiConsumer;
 import moe.queery.needle.value.primitive.number.IntValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,7 +20,7 @@ public class LIntValue extends IntValue {
 
     public LIntValue(final @NotNull String name, final int value,
                      final int min, final int max,
-                     final @Nullable IntBiConsumer change,
+                     final @Nullable Int2IntBiConsumer change,
                      final int @NotNull ... values) {
         super(name, value, change, values);
         this.min = min;

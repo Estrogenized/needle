@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import moe.queery.needle.type.consumer.bi.primitive.number.FloatBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.number.Float2FloatBiConsumer;
 import moe.queery.needle.value.primitive.number.FloatValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,7 +20,7 @@ public class LFloatValue extends FloatValue {
 
     public LFloatValue(final @NotNull String name, final float value,
                        final float min, final float max,
-                       final @Nullable FloatBiConsumer change,
+                       final @Nullable Float2FloatBiConsumer change,
                        final float @NotNull ... values) {
         super(name, value, change, values);
         this.min = min;

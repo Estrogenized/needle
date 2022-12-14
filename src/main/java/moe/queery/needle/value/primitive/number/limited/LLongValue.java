@@ -1,6 +1,6 @@
 package moe.queery.needle.value.primitive.number.limited;
 
-import moe.queery.needle.type.consumer.bi.primitive.number.LongBiConsumer;
+import moe.queery.needle.type.consumer.bi.primitive.number.Long2LongBiConsumer;
 import moe.queery.needle.value.primitive.number.LongValue;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,7 +20,7 @@ public class LLongValue extends LongValue {
 
     public LLongValue(final @NotNull String name, final long value,
                       final long min, final long max,
-                      final @Nullable LongBiConsumer change,
+                      final @Nullable Long2LongBiConsumer change,
                       final long @NotNull ... values) {
         super(name, value, change, values);
         this.min = min;
