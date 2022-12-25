@@ -29,7 +29,7 @@ public final class Strings {
     // @formatter:on
     public static String smallestOf(final String... strings) {
         String smallestString = "";
-        int min = Integer.MAX_VALUE;
+        long min = Long.MAX_VALUE;
         for (final String string : strings) if (string.length() < min) min = (smallestString = string).length();
         return smallestString;
     }

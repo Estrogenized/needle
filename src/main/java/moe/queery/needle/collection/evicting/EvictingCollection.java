@@ -20,7 +20,7 @@ public final class EvictingCollection<V> {
     public @SuppressWarnings("all") boolean add(final V value) {
         final boolean removedFirstEntry;
         if (this.isFull()) {
-            this.collection.remove(this.collection.toArray()[0]);
+            this.collection.remove(this.collection.iterator().next());
             removedFirstEntry = true;
         } else removedFirstEntry = false;
         this.collection.add(value);

@@ -3,7 +3,7 @@ package moe.queery.needle.collection.evicting;
 import java.util.Collections;
 import java.util.Set;
 
-public class EvictingSet<V> {
+public final class EvictingSet<V> {
     private final Set<V> set;
 
     private final int maxSize;
